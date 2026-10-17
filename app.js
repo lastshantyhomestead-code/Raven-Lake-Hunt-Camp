@@ -2,7 +2,7 @@
    Sheet edits are saved only when config.js contains the deployment URL. */
 const $=s=>document.querySelector(s);
 const root=$('#app');let members=[],state=null,person=null,page='welcome',busy=false;
-const fallback=['MA','JOFO','FORDO','BEAR','CASS','WHIRLY','MAJOR','POPCORN','PETEY'].map((name,i)=>({id:`M${String(i+1).padStart(2,'0')}`,name,photo:`assets/members/${name.toLowerCase()}.jpg`}));
+const fallback=['MA','JOFO','FORDO','BEAR','CASS','WHIRLY','MAJOR','POPCORN','PETEY'].map((name,i)=>({id:`M${String(i+1).padStart(2,'0')}`,name,photo:`assets/images/${name.toLowerCase()}.jpg`}));
 const dates=Array.from({length:8},(_,i)=>{let d=new Date(2026,10,1+i);return {key:d.toISOString().slice(0,10),day:d.toLocaleDateString('en-CA',{weekday:'long'}),label:d.toLocaleDateString('en-CA',{month:'short',day:'numeric'}),num:d.getDate()}});
 const api=(window.RAVEN_LAKE_API_URL||'').trim();
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
